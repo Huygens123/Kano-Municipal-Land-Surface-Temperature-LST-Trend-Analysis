@@ -41,12 +41,15 @@ The results of the study is as follows:
    - **Peaks**: Maximum temperatures approach 40°C during peak periods
    - **Seasonality**: Clear seasonal cycles are visible throughout the study period
    - **Recent Trends**: No dramatic long-term increasing or decreasing trend is immediately apparent from visual inspection
+The trend is shown below:
+![Land Surface Temperature (LST) Trend](https://github.com/user-attachments/assets/034bc1fa-aa9b-4ef9-b97f-b2a8b074eac7)
+
 These results suggest that regional climate factors may be the dominant influence on LST patterns in the study area, potentially overshadowing the effects of land cover differences. The similar patterns across different land covers indicate that macro-scale climate drivers affect the entire study area in a relatively uniform manner. However, all these will be verified further in the satistical analysis section
 2. ### Statistical Analysis:
      # Mann-Kendall Trend Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
    The Mann-Kendall test was applied to LST data for six land cover types in Kano Municipal. The results indicate:
    
-     **Mann-Kendall Regional Test is used to analyze trends across different the POI**
+**Mann-Kendall Regional Test is used to analyze trends across different the POI**
 | Land Cover Type | Trend | p-value | Kendall's tau | Sen's slope |
 |----------------|-------|---------|---------------|-------------|
 | BUA (Built-Up Area) | no trend | 0.587291 | 0.031175 | 0.002730 |
@@ -67,7 +70,7 @@ These results suggest that regional climate factors may be the dominant influenc
 | Forest Area | no trend | 0.382570 | 0.093140 |
 
 The time series plots with Mann-Kendall trend is shown below:
-![Mann-Kendall trend](https://github.com/user-attachments/assets/9ff3cbac-e260-4603-bb10-0bf41201d6e4)
+![Mann-Kendall trend](https://github.com/user-attachments/assets/c54b852c-aa6f-4539-b7a7-3372a9b7a2f2)
 #### Findings
 1. **No Statistically Significant Trends**: All land cover types show p-values greater than 0.05, indicating that there are no statistically significant monotonic trends in LST for any land cover type over the study period.
 
@@ -77,6 +80,7 @@ The time series plots with Mann-Kendall trend is shown below:
 
 3. **Kendall's Tau Values**: All Kendall's tau values are close to zero, further confirming weak correlations between temperature and time.
 Based on the Mann-Kendall analysis, we cannot conclude that there have been significant changes in Land Surface Temperature in Kano Municipal across any of the six land cover types during the 2013-2024 period. Further analysis using additional statistical methods may provide complementary insights.
+
 
 ## Repository Structure
 ```
