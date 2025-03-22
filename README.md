@@ -72,13 +72,11 @@ These results suggest that regional climate factors may be the dominant influenc
 The time series plots with Mann-Kendall trend is shown below:
 ![Mann-Kendall trend](https://github.com/user-attachments/assets/c54b852c-aa6f-4539-b7a7-3372a9b7a2f2)
 #### Findings
-1. **No Statistically Significant Trends**: All land cover types show p-values greater than 0.05, indicating that there are no statistically significant monotonic trends in LST for any land cover type over the study period.
-
-2. **Slight Directional Tendencies**:
+- **No Statistically Significant Trends**: All land cover types show p-values greater than 0.05, indicating that there are no statistically significant monotonic trends in LST for any land cover type over the study period.
+- **Slight Directional Tendencies**:
    - Small positive slopes in BUA (0.0027 units/time), Crop (0.0071 units/time), Shrub (0.0076 units/time), and Forest (0.0027 units/time) areas suggest very slight warming, though not statistically significant
    - Small negative slopes in Bare (-0.0038 units/time) and Grass (-0.0087 units/time) areas suggest very slight cooling, though not statistically significant
-
-3. **Kendall's Tau Values**: All Kendall's tau values are close to zero, further confirming weak correlations between temperature and time.
+- **Kendall's Tau Values**: All Kendall's tau values are close to zero, further confirming weak correlations between temperature and time.
 Based on the Mann-Kendall analysis, we cannot conclude that there have been significant changes in Land Surface Temperature in Kano Municipal across any of the six land cover types during the 2013-2024 period. Further analysis using additional statistical methods may provide complementary insights.
 
 
