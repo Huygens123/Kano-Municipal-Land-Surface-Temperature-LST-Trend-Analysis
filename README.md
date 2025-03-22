@@ -42,7 +42,6 @@ The results of the study is as follows:
    - **Seasonality**: Clear seasonal cycles are visible throughout the study period
    - **Recent Trends**: No dramatic long-term increasing or decreasing trend is immediately apparent from visual inspection
 The trend is shown below:
-![Land Surface Temperature (LST) Trend](https://github.com/user-attachments/assets/034bc1fa-aa9b-4ef9-b97f-b2a8b074eac7)
 
 These results suggest that regional climate factors may be the dominant influence on LST patterns in the study area, potentially overshadowing the effects of land cover differences. The similar patterns across different land covers indicate that macro-scale climate drivers affect the entire study area in a relatively uniform manner. However, all these will be verified further in the satistical analysis section
 2. ### Mann-Kendall Trend Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
@@ -69,7 +68,7 @@ These results suggest that regional climate factors may be the dominant influenc
 | Forest Area | no trend | 0.382570 | 0.093140 |
 
 The time series plots with Mann-Kendall trend is shown below:
-![Mann-Kendall trend](https://github.com/user-attachments/assets/c54b852c-aa6f-4539-b7a7-3372a9b7a2f2)
+
 #### Findings
 - **No Statistically Significant Trends**: All land cover types show p-values greater than 0.05, indicating that there are no statistically significant monotonic trends in LST for any land cover type over the study period.
 - **Slight Directional Tendencies**:
@@ -165,7 +164,6 @@ Quantile regression was applied to examine potential trends across five differen
 - Similar U-shaped pattern to grass area
 - Lower (Q0.1) and higher (Q0.9) temperatures show increasing trends
 - Upper-middle temperatures (Q0.75) show the strongest decreasing trend (-0.016 units/time)
-  
 The quantile regression analysis show the changes in LST distributions across different land cover types in Kano Municipal between 2013-2024. Althoug, these changes are not statistically significant, the consistent patterns across land cover types—particularly the increases in lower quantile temperatures—merit continued monitoring and may have implications for urban planning, agriculture, and ecosystem management in the region.
 
 4. ### Seasonal Decomposition Analysis
@@ -195,11 +193,29 @@ The analysis decomposes observed time series data into trend, seasonal, and resi
    - Forest has the highest residual component (46.33%)
    - Bare has the lowest residual component (36.24%)
    - A significant drop in residuals visible around 2016 across all types
-![Seasonal Decomposition for Crop](https://github.com/user-attachments/assets/3b4a59f9-dce9-44c8-9231-b45dd16f503e)
-![Seasonal Decomposition for Bareland](https://github.com/user-attachments/assets/c9db882f-17f6-4773-8899-97b15e540349)
-
 The decomposition analysis shows that the seasonal patterns are consistent across vegetation types and the relative importance of trend and random fluctuations varies. Forest areas show higher unexplained variance, suggesting more complex dynamics, while Run areas demonstrate stronger trend dominance.
 
+5. ### Extreme Event Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
+The analysis tracks temperature anomalies and identifies both high and low extreme events based on percentile thresholds.
+
+- **Findings**
+   - **Crop**: The analysis revealed an upper threshold (95th percentile) of 40.69° and a lower threshold (5th percentile) of 19.65° for crop. Extreme low events were concentrated in 2014-2015, while multiple extreme high temperature events were observed in 2019, 2020, and 2024.
+   - **Forest**: Forest showed slightly different thresholds with an upper value of 39.95° and a lower value of 23.09°. Extreme high events were observed in 2015, 2018-2021, and 2024, while extreme low events clustered around 2018-2019.
+   - **Vegetation**: Additional analysis by vegetation type showed grass environments with thresholds of 38.33° (upper) and 19.42° (lower), while shrub environments recorded thresholds of 38.66° (upper) and 19.37° (lower). Both vegetation types experienced identical numbers of extreme events, with low extremes concentrated in 2014-2015 and high extremes appearing in 2019-2020 and 2024.
+   - **BUA and Bareland**: The analysis revealed that BUA and Barelan have several significant patterns in extreme temperature events with both of them have consistent numbers of extreme low temperature events from 2014 through 2024, with an increase between 2013 and 2014 that persisted thereafter. Low temperature extremes reached significant magnitudes, dropping to approximately 14°C in 2014 and near 2°C in 2016.
+
+The consistent patterns across different environments suggest regional climate shifts affecting multiple ecosystems simultaneously. The clustering of extreme events and their recent intensification warrant further investigation for climate change impact assessment, ecological research, and agricultural planning.
+
+The consistent pattern of extreme low events since 2014 and the clustering of extreme high events may indicate broader regional climate shifts. The data suggests potential changes in climate variability that warrant further investigation, particularly given the recent extreme high temperature events observed in 2024.
+
+6. ### Spatial Pattern Analysis
+This analysis examines temperature patterns, correlations between locations, and underlying data structure through principal component analysis (PCA).
+
+**Findings**
+- Forest and Crop areas show the highest average temperatures (approximately 31.5°C), while Grass areas recorded the lowest (approximately 29.5°C). Shrub, Bare Land, and Built-Up areas fall in the middle range (approximately 30°C).
+- Forest and Crop areas display the highest temperature variability (standard deviation ~5.8), while Shrub, Bare Land, and Grass show the lowest (standard deviation ~5.1-5.2). Built-Up areas show moderate variability (standard deviation ~5.4).
+- All locations show very high correlations (0.86-0.98). The strongest correlations exist between Bare Land with Shrub and Grass (both 0.98), and between Grass and Shrub (0.97). The weakest correlation is between Built-Up Area and Crop (0.86).
+- The first principal component explains approximately 95% of variance, with cumulative explained variance reaching ~99% with just two components.
 
 ## Repository Structure
 ```
@@ -220,22 +236,41 @@ The decomposition analysis shows that the seasonal patterns are consistent acros
 - **Visualization**: Matplotlib, Seaborn, geemap
 
 ## Results Visualization
-*(Include sample visualizations here)*
+1. **Land Surface Temperature Trend (LST)**
+![Land Surface Temperature (LST) Trend](https://github.com/user-attachments/assets/034bc1fa-aa9b-4ef9-b97f-b2a8b074eac7)
 
-## Future Work
-- Extend the analysis to include more recent data
-- Incorporate additional variables such as vegetation indices
-- Compare with climate model projections
-- Develop predictive models for future LST trends
+2. **Mann-Kendal Analysis**
+![Mann-Kendall trend](https://github.com/user-attachments/assets/c54b852c-aa6f-4539-b7a7-3372a9b7a2f2)
+
+3. **Quantile Regression Analysis**
+![quantile Regression for Bare](https://github.com/user-attachments/assets/281afa52-36ea-4dc7-8e6a-c51d03744bb5)
+![quantile Regression for Shrub](https://github.com/user-attachments/assets/380c6e05-27d2-468e-b014-1b7a58ad2ba2)
+![quantile Regression for Grass](https://github.com/user-attachments/assets/3f793e62-8889-4c05-8f54-fa31e1b2a83e)
+![quantile Regression for Forest](https://github.com/user-attachments/assets/6f9b7d30-2c10-4ace-867f-a99c0bb9d8c9)
+![quantile Regression for Crop](https://github.com/user-attachments/assets/e672ff02-54f3-4540-bd4b-a9c1c22d57be)
+![quantile Regression for Bua](https://github.com/user-attachments/assets/32d5871c-b981-4a8f-8c78-467a704c80b0)
+  
+4. **Seasonal Decomposition Analysis**:
+![seasonal decomposition for Shrub](https://github.com/user-attachments/assets/279f8911-09d1-437c-922d-bf08dc85f808)
+![seasonal decomposition for Grass](https://github.com/user-attachments/assets/442d6dfe-eff7-4302-a089-8648b9e9bc1f)
+![seasonal decomposition for Forest](https://github.com/user-attachments/assets/40f1ec16-cc7a-47e8-8bc5-6619a1d9be5f)
+![seasonal decomposition for Crop](https://github.com/user-attachments/assets/cfce0efd-31ae-4f5a-967d-072345ed77d5)
+![seasonal decomposition for Bua](https://github.com/user-attachments/assets/d44364df-4df4-49cf-b469-dae8e5677fb6)
+![seasonal decomposition for Bare](https://github.com/user-attachments/assets/24d2a340-38ac-48b2-b099-c68fe5b63708)
+
+5. **Extreme Values Analysis*:
+![extreme values timeseries Grass](https://github.com/user-attachments/assets/b5573448-12f3-48a5-a665-bd303b03d14f)
+![extreme values timeseries Forest](https://github.com/user-attachments/assets/2d291e47-a40b-48aa-9627-23c7e0810bca)
+![extreme values timeseries Crop](https://github.com/user-attachments/assets/6d1ed630-1429-4893-b09a-0b0ff90b6825)
+![extreme values timeseries Bua](https://github.com/user-attachments/assets/fa8c745e-9610-4f7b-8de7-9a9911250614)
+![extreme values timeseries Bare](https://github.com/user-attachments/assets/f3cb7059-5fe2-47f0-88a7-3979dbb7408d)
+![extreme values timeseries Shrub](https://github.com/user-attachments/assets/6a2d75b9-5226-4372-8e23-6b743b71ed3f)
 
 ## References
-- *Add relevant references to literature and data sources*
+- de Beurs, K.M., & Henebry, G.M. (2004). Trend analysis of the Pathfinder AVHRR Land (PAL) NDVI data for the deserts of Central Asia. IEEE Geoscience and Remote Sensing Letters, 1(4), 282-286.
+- Parey, S., Malek, F., Laurent, C., & Dacunha-Castelle, D. (2007). Trends and climate evolution: Statistical approach for very high temperatures in France. Climatic Change, 81(3-4), 331-352.
+- Metz, M., Rocchini, D., & Neteler, M. (2014). Surface temperatures at the continental scale: Tracking changes with remote sensing at unprecedented detail. Remote Sensing, 6(5), 3822-3840.
+- Li, H., Zhou, Y., Jia, G., Zhao, K., & Dong, J. (2022). Quantifying the response of surface urban heat island to urbanization using the annual temperature cycle. Geophysical Research Letters, 49(7), e2021GL097673
 
 ## Contributors
-- *Your Name* - *Your Affiliation*
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Acknowledgments
-- *Add acknowledgments for data providers, funding sources, etc.*
+- *Abdulquawiyy Adisa Owolabi*
