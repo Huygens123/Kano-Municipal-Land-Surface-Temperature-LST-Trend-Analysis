@@ -45,8 +45,7 @@ The trend is shown below:
 ![Land Surface Temperature (LST) Trend](https://github.com/user-attachments/assets/034bc1fa-aa9b-4ef9-b97f-b2a8b074eac7)
 
 These results suggest that regional climate factors may be the dominant influence on LST patterns in the study area, potentially overshadowing the effects of land cover differences. The similar patterns across different land covers indicate that macro-scale climate drivers affect the entire study area in a relatively uniform manner. However, all these will be verified further in the satistical analysis section
-2. ### Statistical Analysis:
-     # Mann-Kendall Trend Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
+2. ### Mann-Kendall Trend Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
    The Mann-Kendall test was applied to LST data for six land cover types in Kano Municipal. The results indicate:
    
 **Mann-Kendall Regional Test is used to analyze trends across different the POI**
@@ -78,6 +77,128 @@ The time series plots with Mann-Kendall trend is shown below:
    - Small negative slopes in Bare (-0.0038 units/time) and Grass (-0.0087 units/time) areas suggest very slight cooling, though not statistically significant
 - **Kendall's Tau Values**: All Kendall's tau values are close to zero, further confirming weak correlations between temperature and time.
 Based on the Mann-Kendall analysis, we cannot conclude that there have been significant changes in Land Surface Temperature in Kano Municipal across any of the six land cover types during the 2013-2024 period. Further analysis using additional statistical methods may provide complementary insights.
+3. ### Quantile Regeression Analysis (QR)
+# Quantile Regression Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
+Quantile regression was applied to examine potential trends across five different quantiles (0.1, 0.25, 0.5, 0.75, and 0.9) of the LST distribution for each land cover type. This approach helps identify whether different parts of the temperature distribution (e.g., extreme low temperatures vs. extreme high temperatures) are changing at different rates.
+
+#### Built-Up Area (BUA)
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | -0.036685 |
+| 0.25 | 0.005649 |
+| 0.5 | 0.001117 |
+| 0.75 | 0.022049 |
+| 0.9 | 0.053643 |
+
+**Findings**: 
+- Lower temperatures (Q0.1) show a decreasing trend (-0.037 units/time)
+- Higher temperatures (Q0.9) show an increasing trend (0.054 units/time)
+- Middle temperatures (Q0.5) remain relatively stable (0.001 units/time)
+- F-statistic and p-value indicate no significant difference in slopes across quantiles
+
+#### Crop Area
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | 0.109705 |
+| 0.25 | 0.003067 |
+| 0.5 | 0.006783 |
+| 0.75 | -0.014914 |
+| 0.9 | 0.041339 |
+
+**Findings**: 
+- Lower temperatures (Q0.1) show a strong increasing trend (0.110 units/time)
+- Upper-middle temperatures (Q0.75) show a slight decreasing trend (-0.015 units/time)
+- No significant difference in slopes across quantiles
+
+#### Bare Area
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | 0.106268 |
+| 0.25 | -0.001544 |
+| 0.5 | -0.007960 |
+| 0.75 | -0.014389 |
+| 0.9 | -0.013223 |
+
+**Findings**: 
+- Lower temperatures (Q0.1) show a substantial increasing trend (0.106 units/time)
+- Middle and higher temperatures show slight decreasing trends
+- Suggests narrowing of temperature distribution over time
+
+#### Shrub Area
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | 0.108318 |
+| 0.25 | 0.008513 |
+| 0.5 | 0.007601 |
+| 0.75 | 0.016550 |
+| 0.9 | 0.013116 |
+
+**Findings**: 
+- All quantiles show positive slopes, indicating warming across the entire distribution
+- Lower temperatures (Q0.1) are increasing most rapidly (0.108 units/time)
+- No significant difference in slopes across quantiles
+
+#### Grass Area
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | 0.059229 |
+| 0.25 | -0.006993 |
+| 0.5 | -0.026785 |
+| 0.75 | -0.011483 |
+| 0.9 | 0.036976 |
+
+**Findings**: 
+- U-shaped pattern with increasing trends in lower (Q0.1) and higher (Q0.9) temperatures
+- Middle temperatures (Q0.5) show the strongest decreasing trend (-0.027 units/time)
+- Suggests increasing temperature variability over time
+
+#### Forest Area
+| Quantile | Slope |
+|----------|-------|
+| 0.1 | 0.036815 |
+| 0.25 | 0.000877 |
+| 0.5 | -0.006637 |
+| 0.75 | -0.015854 |
+| 0.9 | 0.027920 |
+
+**Findings**: 
+- Similar U-shaped pattern to grass area
+- Lower (Q0.1) and higher (Q0.9) temperatures show increasing trends
+- Upper-middle temperatures (Q0.75) show the strongest decreasing trend (-0.016 units/time)
+  
+The quantile regression analysis show the changes in LST distributions across different land cover types in Kano Municipal between 2013-2024. Althoug, these changes are not statistically significant, the consistent patterns across land cover types—particularly the increases in lower quantile temperatures—merit continued monitoring and may have implications for urban planning, agriculture, and ecosystem management in the region.
+
+4. ### Seasonal Decomposition Analysis
+The analysis decomposes observed time series data into trend, seasonal, and residual components to understand the temporal patterns in vegetation cover.
+
+**Variance Explained by Components**
+
+| Cover Type | Trend (%) | Seasonality (%) | Residuals (%) |
+|------------|-----------|----------------|--------------|
+| BUA        | 49.21     | 8.77           | 38.17        |
+| Forest     | 37.48     | 8.67           | 46.33        |
+| Grass      | 44.55     | 8.91           | 37.87        |
+| Shrub      | 44.82     | 8.85           | 37.96        |
+| Bare       | 44.63     | 8.98           | 36.24        |
+| Crop       | 47.24     | 8.85           | 39.17        |
+
+**Findings**
+- Trend:
+   - All vegetation types show similar long-term trend patterns with peaks around 2018 and 2024
+   - Forest has the lowest trend component (37.48%)
+   - Run has the highest trend component (49.21%)
+- Seasonal:
+   - All vegetation types display consistent seasonal patterns
+   - Seasonality explains approximately 8-9% of variance across all types
+   - Regular oscillation indicates predictable annual growth cycles
+- Residual Component:
+   - Forest has the highest residual component (46.33%)
+   - Bare has the lowest residual component (36.24%)
+   - A significant drop in residuals visible around 2016 across all types
+![Seasonal Decomposition for Crop](https://github.com/user-attachments/assets/3b4a59f9-dce9-44c8-9231-b45dd16f503e)
+![Seasonal Decomposition for Bareland](https://github.com/user-attachments/assets/c9db882f-17f6-4773-8899-97b15e540349)
+
+The decomposition analysis shows that the seasonal patterns are consistent across vegetation types and the relative importance of trend and random fluctuations varies. Forest areas show higher unexplained variance, suggesting more complex dynamics, while Run areas demonstrate stronger trend dominance.
 
 
 ## Repository Structure
