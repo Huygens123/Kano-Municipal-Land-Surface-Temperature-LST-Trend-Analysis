@@ -107,7 +107,7 @@ The analysis decomposes observed time series data into trend, seasonal, and resi
 | Crop       | 47.24     | 8.85           | 39.17        |
 
 **Findings**
--Trend
+- Trend
    - Highest in Shrub (63.66%) and Bareland (62.34%)
    - Lowest in Built-up areas (52.62%) and Forest (53.97%)
 - Seasonal Variance
@@ -118,28 +118,34 @@ The analysis decomposes observed time series data into trend, seasonal, and resi
    - Highest in Built-up areas (24.81%)
    - Lowest in Grass and Bareland (18.67%)
 
-5. ### Extreme Event Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
+5. ### Extreme Event Analysis of Land Surface Temperature
 The analysis tracks temperature anomalies and identifies both high and low extreme events based on percentile thresholds.
 
+| Land Cover Type | Upper Threshold (95th percentile) | Lower Threshold (5th percentile) |
+|----------------|-----------------------------------|----------------------------------|
+| Forest | 35.76°C | 23.88°C |
+| Grass | 41.43°C | 25.70°C |
+| Shrub | 39.37°C | 27.21°C |
+| Bareland | 40.96°C | 28.21°C |
+| Crop | 40.46°C | 27.96°C |
+| Built-up Areas | 38.25°C | 26.07°C |
+
 - **Findings**
-   - **Crop**: The analysis revealed an upper threshold (95th percentile) of 40.69° and a lower threshold (5th percentile) of 19.65° for crop. Extreme low events were concentrated in 2014-2015, while multiple extreme high temperature events were observed in 2019, 2020, and 2024.
-   - **Forest**: Forest showed slightly different thresholds with an upper value of 39.95° and a lower value of 23.09°. Extreme high events were observed in 2015, 2018-2021, and 2024, while extreme low events clustered around 2018-2019.
-   - **Vegetation**: Additional analysis by vegetation type showed grass environments with thresholds of 38.33° (upper) and 19.42° (lower), while shrub environments recorded thresholds of 38.66° (upper) and 19.37° (lower). Both vegetation types experienced identical numbers of extreme events, with low extremes concentrated in 2014-2015 and high extremes appearing in 2019-2020 and 2024.
-   - **BUA and Bareland**: The analysis revealed that BUA and Barelan have several significant patterns in extreme temperature events with both of them have consistent numbers of extreme low temperature events from 2014 through 2024, with an increase between 2013 and 2014 that persisted thereafter. Low temperature extremes reached significant magnitudes, dropping to approximately 14°C in 2014 and near 2°C in 2016.
+   - **Crop**: The analysis revealed an upper threshold (95th percentile) of 40.46°C and a lower threshold (5th percentile) of 27.96°C for crop. Extreme low event occured in late 2015 which was about 14.8°C and it then concentrated in early 2022, while extreme high temperature events were concentrated between 2019 and 2020.
+   - **Forest**: Forest showed slightly different thresholds with an upper value of 35.76° and a lower value of 23.88°. Extreme high events were clustered in 2019 to 2020, while extreme low events reched minimum (21.5°C in 2022 and 22°C in 2023.
+   - **Grass and Shrub**: The analysis revealed that grass environments with thresholds of 41.43° (upper) and 25.70° (lower), while shrub environments recorded thresholds of 39.37°C (upper) and 27.21°C (lower). Both vegetation types experienced identical high extreme events 2019, with low extremes appearing in 2023 (Shrub) and late 2015 for forest,
+   - **BUA and Bareland**: The analysis revealed that both BUA and Barelan have several similar patterns in extreme temperature events with both of them have consistent numbers of extreme high temperature events from 2018 through 2020. Low temperature extremes reached significant magnitudes, dropping to approximately 22.5°C in 2022 and near 25°C in 2023.
 
 The consistent patterns across different environments suggest regional climate shifts affecting multiple ecosystems simultaneously. The clustering of extreme events and their recent intensification warrant further investigation for climate change impact assessment, ecological research, and agricultural planning.
 
-The consistent pattern of extreme low events since 2014 and the clustering of extreme high events may indicate broader regional climate shifts. The data suggests potential changes in climate variability that warrant further investigation, particularly given the recent extreme high temperature events observed in 2024.
-
 6. ### Spatial Pattern Analysis
 This analysis examines temperature patterns, correlations between locations, and underlying data structure through principal component analysis (PCA).
-
 **Findings**
-- Forest and Crop areas show the highest average temperatures (approximately 31.5°C), while Grass areas recorded the lowest (approximately 29.5°C). Shrub, Bare Land, and Built-Up areas fall in the middle range (approximately 30°C).
+- Forest and Crop areas show the highest average temperatures (about 31.5°C), while Grass areas recorded the lowest (approximately 29.5°C). Shrub, Bare Land, and Built-Up areas fall in the middle range (approximately 30°C).
 - Forest and Crop areas display the highest temperature variability (standard deviation ~5.8), while Shrub, Bare Land, and Grass show the lowest (standard deviation ~5.1-5.2). Built-Up areas show moderate variability (standard deviation ~5.4).
 - All locations show very high correlations (0.86-0.98). The strongest correlations exist between Bare Land with Shrub and Grass (both 0.98), and between Grass and Shrub (0.97). The weakest correlation is between Built-Up Area and Crop (0.86).
-- The first principal component explains approximately 95% of variance, with cumulative explained variance reaching ~99% with just two components.
-
+- The first principal component explains approximately 90% of the total variance, with cumulative explained variance reaching ~99% with just two components.
+  
 ## Repository Structure
 ```
 ├── data/
@@ -160,34 +166,44 @@ This analysis examines temperature patterns, correlations between locations, and
 
 ## Results Visualization
 1. **Land Surface Temperature Trend (LST)**
-![Land Surface Temperature (LST) Trend](https://github.com/user-attachments/assets/034bc1fa-aa9b-4ef9-b97f-b2a8b074eac7)
+![Temperature_Distibution_by_LandUse](https://github.com/user-attachments/assets/27552604-e149-454d-bac5-5b23b37b3bf1)
 
 2. **Mann-Kendal Analysis**
-![Mann-Kendall trend](https://github.com/user-attachments/assets/c54b852c-aa6f-4539-b7a7-3372a9b7a2f2)
+![LST_Trend_Analysis](https://github.com/user-attachments/assets/3eebefb5-60ed-4a98-a0f6-d2b536d4f380)
 
 3. **Quantile Regression Analysis**
-![quantile Regression for Bare](https://github.com/user-attachments/assets/281afa52-36ea-4dc7-8e6a-c51d03744bb5)
-![quantile Regression for Shrub](https://github.com/user-attachments/assets/380c6e05-27d2-468e-b014-1b7a58ad2ba2)
-![quantile Regression for Grass](https://github.com/user-attachments/assets/3f793e62-8889-4c05-8f54-fa31e1b2a83e)
-![quantile Regression for Forest](https://github.com/user-attachments/assets/6f9b7d30-2c10-4ace-867f-a99c0bb9d8c9)
-![quantile Regression for Crop](https://github.com/user-attachments/assets/e672ff02-54f3-4540-bd4b-a9c1c22d57be)
-![quantile Regression for Bua](https://github.com/user-attachments/assets/32d5871c-b981-4a8f-8c78-467a704c80b0)
-  
-4. **Seasonal Decomposition Analysis**:
-![seasonal decomposition for Shrub](https://github.com/user-attachments/assets/279f8911-09d1-437c-922d-bf08dc85f808)
-![seasonal decomposition for Grass](https://github.com/user-attachments/assets/442d6dfe-eff7-4302-a089-8648b9e9bc1f)
-![seasonal decomposition for Forest](https://github.com/user-attachments/assets/40f1ec16-cc7a-47e8-8bc5-6619a1d9be5f)
-![seasonal decomposition for Crop](https://github.com/user-attachments/assets/cfce0efd-31ae-4f5a-967d-072345ed77d5)
-![seasonal decomposition for Bua](https://github.com/user-attachments/assets/d44364df-4df4-49cf-b469-dae8e5677fb6)
-![seasonal decomposition for Bare](https://github.com/user-attachments/assets/24d2a340-38ac-48b2-b099-c68fe5b63708)
+![quantile Regression for Crop](https://github.com/user-attachments/assets/628b3530-70fa-4caf-b366-35647839bb5b)
+![quantile Regression for Built up](https://github.com/user-attachments/assets/d445d99a-319a-483c-a052-e51653aef347)
+![quantile Regression for Bareland](https://github.com/user-attachments/assets/1a54d610-d65f-4a2c-9d8e-b4816f4ab252)
+![quantile Regression for Shrub](https://github.com/user-attachments/assets/e260b9b6-9980-43c9-8dd2-9d593577daff)
+![quantile Regression for Grass](https://github.com/user-attachments/assets/8dfa3b74-089d-4134-bf44-91b6a7732ba6)
+![quantile Regression for Forest](https://github.com/user-attachments/assets/ad003ea3-280c-49b0-8fa7-58038229d673)
 
-5. **Extreme Values Analysis*:
-![extreme values timeseries Grass](https://github.com/user-attachments/assets/b5573448-12f3-48a5-a665-bd303b03d14f)
-![extreme values timeseries Forest](https://github.com/user-attachments/assets/2d291e47-a40b-48aa-9627-23c7e0810bca)
-![extreme values timeseries Crop](https://github.com/user-attachments/assets/6d1ed630-1429-4893-b09a-0b0ff90b6825)
-![extreme values timeseries Bua](https://github.com/user-attachments/assets/fa8c745e-9610-4f7b-8de7-9a9911250614)
-![extreme values timeseries Bare](https://github.com/user-attachments/assets/f3cb7059-5fe2-47f0-88a7-3979dbb7408d)
-![extreme values timeseries Shrub](https://github.com/user-attachments/assets/6a2d75b9-5226-4372-8e23-6b743b71ed3f)
+  
+5. **Seasonal Decomposition Analysis**:
+![seasonal decomposition for Crop](https://github.com/user-attachments/assets/c73f1391-a862-43a3-a0f8-ba2671fe6740)
+![seasonal decomposition for Built up](https://github.com/user-attachments/assets/9bf1690b-61c7-4dc6-91a3-c9a7053edd53)
+![seasonal decomposition for Bareland](https://github.com/user-attachments/assets/919cbc4d-1971-4197-ae8f-07747b6ab78b)
+![seasonal decomposition for Grass](https://github.com/user-attachments/assets/29fbe6d4-a6d8-47e3-aa3d-e46c02b48901)
+![seasonal decomposition for Shrub](https://github.com/user-attachments/assets/3c0c5217-c160-4d94-8a0a-e233f47533fd)
+![seasonal decomposition for Forest](https://github.com/user-attachments/assets/cd49eb09-cddc-45c9-8b01-289366b2ebd7)
+
+6. **Extreme Values Analysis**:
+
+![extreme values timeseries Forest](https://github.com/user-attachments/assets/3ca92753-a202-467e-b1d0-5f037350ac71)
+![extreme values timeseries Crop](https://github.com/user-attachments/assets/d178138b-4958-41ed-b0c4-074acf9c76d2)
+![extreme values timeseries Built up](https://github.com/user-attachments/assets/a12249c6-cb2b-458d-b35c-a1f8ffcdae87)
+![extreme values timeseries Bareland](https://github.com/user-attachments/assets/b8d22261-b4fa-4e4a-86a1-ab5053bf9221)
+![extreme values timeseries Shrub](https://github.com/user-attachments/assets/7fea497c-84da-4a64-9e39-bae0ac5f63f9)
+![extreme values timeseries Grass](https://github.com/user-attachments/assets/305a1dc5-0d48-4099-b4e6-b3e1eb3165dd)
+
+6. **Spatial Patterns**
+
+![Average temperature by location](https://github.com/user-attachments/assets/31cb78ba-82fd-47da-8747-c3a61ec0a1f0)
+![Temperature variability](https://github.com/user-attachments/assets/1011d0a0-fa5e-4072-9224-5ac51eda933a)
+![First Two Principal Components](https://github.com/user-attachments/assets/2bb67243-16a7-4172-827b-07207a9f19ac)
+![Explained PCA](https://github.com/user-attachments/assets/ca0abb67-a1d5-40ac-8c4b-73dd7257e06a)
+![Correlation](https://github.com/user-attachments/assets/ccb82f7d-9c58-4c63-90fc-3c3fc3261dca)
 
 ## References
 - de Beurs, K.M., & Henebry, G.M. (2004). Trend analysis of the Pathfinder AVHRR Land (PAL) NDVI data for the deserts of Central Asia. IEEE Geoscience and Remote Sensing Letters, 1(4), 282-286.
@@ -195,5 +211,5 @@ This analysis examines temperature patterns, correlations between locations, and
 - Metz, M., Rocchini, D., & Neteler, M. (2014). Surface temperatures at the continental scale: Tracking changes with remote sensing at unprecedented detail. Remote Sensing, 6(5), 3822-3840.
 - Li, H., Zhou, Y., Jia, G., Zhao, K., & Dong, J. (2022). Quantifying the response of surface urban heat island to urbanization using the annual temperature cycle. Geophysical Research Letters, 49(7), e2021GL097673
 
-## Contributors
+## Author
 - *Abdulquawiyy Adisa Owolabi*
