@@ -1,4 +1,4 @@
-# Kano Municipal Land Surface Temperature (LST) Trend Analysis (2013-2024)
+# Spatiotemporal Land Surface Temperature Trend Analysis of Kano Municipality (2013-2024)
 
 ## Overview
 This repository contains a comprehensive analysis of Land Surface Temperature (LST) trends in Kano Municipal, Nigeria from 2013 to 2024 using Landsat 8 imagery. The analysis examines LST variations across different land use categories and employs multiple statistical methods to identify significant trends and patterns.
