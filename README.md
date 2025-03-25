@@ -33,138 +33,63 @@ The study employed multiple analytical approaches to ensure robust results:
      
 ## Results
 The results of the study is as follows:
+1. ### Land Surface Temperature Map:
+   ![LST Yearly Map](results/maps/Yearly_LST.png)
 1. ### Land Surface Temperature Results (LST):
-   - **Temperature Range**: All land cover types show LST values generally ranging between 15-40°C
+   - **Temperature Range**: All land cover types show LST values generally ranging between 20-40°C
    - **Temporal Pattern**: Similar seasonal fluctuations are evident across all land cover types
    - **Anomaly**: A significant temperature drop occurred around 2015-2016 across all land cover types
    - **Consistency**: The overall pattern of temperature variation remains consistent across different land cover categories
    - **Peaks**: Maximum temperatures approach 40°C during peak periods
    - **Seasonality**: Clear seasonal cycles are visible throughout the study period
    - **Recent Trends**: No dramatic long-term increasing or decreasing trend is immediately apparent from visual inspection
-The trend is shown below:
-
 These results suggest that regional climate factors may be the dominant influence on LST patterns in the study area, potentially overshadowing the effects of land cover differences. The similar patterns across different land covers indicate that macro-scale climate drivers affect the entire study area in a relatively uniform manner. However, all these will be verified further in the satistical analysis section
 2. ### Mann-Kendall Trend Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
    The Mann-Kendall test was applied to LST data for six land cover types in Kano Municipal. The results indicate:
-   
 **Mann-Kendall Regional Test is used to analyze trends across different the POI**
-| Land Cover Type | Trend | p-value | Kendall's tau | Sen's slope |
-|----------------|-------|---------|---------------|-------------|
-| BUA (Built-Up Area) | no trend | 0.587291 | 0.031175 | 0.002730 |
-| Crop Area | no trend | 0.406233 | 0.047649 | 0.007090 |
-| Bare Area | no trend | 0.550236 | -0.034303 | -0.003772 |
-| Shrub Area | no trend | 0.266555 | 0.063706 | 0.007570 |
-| Grass Area | no trend | 0.319998 | -0.057033 | -0.008678 |
-| Forest Area | no trend | 0.696706 | 0.022417 | 0.002724 |
+- `Trend`: Indicates the direction and significance of the trend
+- `p-value`: Determines statistical significance (p < 0.05 indicates a significant trend)
+- `Kendall's tau`: Measures the strength and direction of the association
+- `Sen's slope`: Estimates the magnitude of the trend
+
+| Land Cover Type | Trend     | p-value   | Kendall's tau | Sen's slope |
+|----------------|-----------|-----------|--------------|------------|
+| Built-up       | No trend  | 0.806360  | -0.018987    | -0.004439  |
+| Crop           | No trend  | 0.574880  | 0.043038     | 0.010216   |
+| Bareland       | No trend  | 0.324794  | 0.075316     | 0.020615   |
+| Shrub          | No trend  | 0.768008  | -0.022785    | -0.006097  |
+| Grassland      | No trend  | 0.552434  | 0.045570     | 0.010915   |
+| Forest         | No trend  | 0.422640  | 0.061392     | 0.013715   |
+None of the land cover types show a statistically significant trend in Land Surface Temperature. This is evident from the high p-values (all > 0.05), which suggest that the observed variations in temperature could be due to random fluctuations rather than a consistent trend.
 
   **Seasonal Kendall Test**
-| Land Cover Type | Trend | p-value | Sen's slope |
-|----------------|-------|---------|-------------|
-| BUA (Built-Up Area) | no trend | 0.212256 | 0.109019 |
-| Crop Area | no trend | 0.429521 | 0.086180 |
-| Bare Area | no trend | 0.298678 | -0.080193 |
-| Shrub Area | no trend | 0.157410 | 0.098044 |
-| Grass Area | no trend | 0.279667 | -0.105406 |
-| Forest Area | no trend | 0.382570 | 0.093140 |
+| Land Cover Type | Trend      | p-value   | Sen's slope |
+|----------------|------------|-----------|-------------|
+| Built-up       | No trend   | 0.068292  | 0.112608    |
+| Crop           | Increasing | 0.009204  | 0.211109    |
+| Bareland       | Increasing | 0.000189  | 0.296801    |
+| Shrub          | No trend   | 0.385323  | 0.080833    |
+| Grassland      | No trend   | 0.082518  | 0.234221    |
+| Forest         | Increasing | 0.004172  | 0.283901    |
 
-The time series plots with Mann-Kendall trend is shown below:
-
-#### Findings
-- **No Statistically Significant Trends**: All land cover types show p-values greater than 0.05, indicating that there are no statistically significant monotonic trends in LST for any land cover type over the study period.
-- **Slight Directional Tendencies**:
-   - Small positive slopes in BUA (0.0027 units/time), Crop (0.0071 units/time), Shrub (0.0076 units/time), and Forest (0.0027 units/time) areas suggest very slight warming, though not statistically significant
-   - Small negative slopes in Bare (-0.0038 units/time) and Grass (-0.0087 units/time) areas suggest very slight cooling, though not statistically significant
-- **Kendall's Tau Values**: All Kendall's tau values are close to zero, further confirming weak correlations between temperature and time.
-Based on the Mann-Kendall analysis, we cannot conclude that there have been significant changes in Land Surface Temperature in Kano Municipal across any of the six land cover types during the 2013-2024 period. Further analysis using additional statistical methods may provide complementary insights.
+Three land cover types (Bareland, Forest, and Crop) show statistically significant increasing Land Surface Temperature trends. Bareland exhibits the most pronounced temperature increase. Built-up and Grassland areas are on the border of statistical significance. Shrub areas show no significant temperature trend. The significant warming in Bareland, Forest, and Crop areas could mean that the local climate change effects, Land use and land cover changes and potential urban heat island or deforestation impacts.
 3. ### Quantile Regeression Analysis (QR)
 # Quantile Regression Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
 Quantile regression was applied to examine potential trends across five different quantiles (0.1, 0.25, 0.5, 0.75, and 0.9) of the LST distribution for each land cover type. This approach helps identify whether different parts of the temperature distribution (e.g., extreme low temperatures vs. extreme high temperatures) are changing at different rates.
+Quantile Regression Analysis of Land Cover Types
+| Land Cover Type | Q(0.1) Slope | Q(0.25) Slope | Q(0.5) Slope | Q(0.75) Slope | Q(0.9) Slope | 
+|----------------|--------------|--------------|--------------|---------------|--------------|
+| Bareland       | 0.048749     | 0.043977     | 0.042057     | 0.023058      | -0.022647    |
+| Forest         | 0.046793     | 0.029460     | 0.029967     | 0.022883      | -0.012253    |
+| Crop           | 0.008713     | 0.029358     | 0.030498     | 0.025632      | -0.024453    |
+| Shrub          | 0.011303     | 0.029743     | 0.022076     | 0.008930      | -0.026201    |
+| Built up       | 0.015008     | 0.023755     | 0.022609     | 0.007201      | -0.008581    |
+| Grass          | -0.028710    | 0.000478     | 0.012926     | 0.027618      | -0.018106    |
 
-#### Built-Up Area (BUA)
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | -0.036685 |
-| 0.25 | 0.005649 |
-| 0.5 | 0.001117 |
-| 0.75 | 0.022049 |
-| 0.9 | 0.053643 |
+Slope Patterns
+Most land cover types show positive slopes in lower to mid quantiles (Q(0.1) to Q(0.5)) and consistent negative slopes appear in the highest quantile (Q(0.9)). Bareland shows the most pronounced slope variations at Q(0.1): 0.048749 while Grassland is the only type with a negative slope at Q(0.1): -0.028710 meanwhile, Crop peaks at Q(0.5) with a slope of 0.030498
 
-**Findings**: 
-- Lower temperatures (Q0.1) show a decreasing trend (-0.037 units/time)
-- Higher temperatures (Q0.9) show an increasing trend (0.054 units/time)
-- Middle temperatures (Q0.5) remain relatively stable (0.001 units/time)
-- F-statistic and p-value indicate no significant difference in slopes across quantiles
-
-#### Crop Area
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | 0.109705 |
-| 0.25 | 0.003067 |
-| 0.5 | 0.006783 |
-| 0.75 | -0.014914 |
-| 0.9 | 0.041339 |
-
-**Findings**: 
-- Lower temperatures (Q0.1) show a strong increasing trend (0.110 units/time)
-- Upper-middle temperatures (Q0.75) show a slight decreasing trend (-0.015 units/time)
-- No significant difference in slopes across quantiles
-
-#### Bare Area
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | 0.106268 |
-| 0.25 | -0.001544 |
-| 0.5 | -0.007960 |
-| 0.75 | -0.014389 |
-| 0.9 | -0.013223 |
-
-**Findings**: 
-- Lower temperatures (Q0.1) show a substantial increasing trend (0.106 units/time)
-- Middle and higher temperatures show slight decreasing trends
-- Suggests narrowing of temperature distribution over time
-
-#### Shrub Area
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | 0.108318 |
-| 0.25 | 0.008513 |
-| 0.5 | 0.007601 |
-| 0.75 | 0.016550 |
-| 0.9 | 0.013116 |
-
-**Findings**: 
-- All quantiles show positive slopes, indicating warming across the entire distribution
-- Lower temperatures (Q0.1) are increasing most rapidly (0.108 units/time)
-- No significant difference in slopes across quantiles
-
-#### Grass Area
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | 0.059229 |
-| 0.25 | -0.006993 |
-| 0.5 | -0.026785 |
-| 0.75 | -0.011483 |
-| 0.9 | 0.036976 |
-
-**Findings**: 
-- U-shaped pattern with increasing trends in lower (Q0.1) and higher (Q0.9) temperatures
-- Middle temperatures (Q0.5) show the strongest decreasing trend (-0.027 units/time)
-- Suggests increasing temperature variability over time
-
-#### Forest Area
-| Quantile | Slope |
-|----------|-------|
-| 0.1 | 0.036815 |
-| 0.25 | 0.000877 |
-| 0.5 | -0.006637 |
-| 0.75 | -0.015854 |
-| 0.9 | 0.027920 |
-
-**Findings**: 
-- Similar U-shaped pattern to grass area
-- Lower (Q0.1) and higher (Q0.9) temperatures show increasing trends
-- Upper-middle temperatures (Q0.75) show the strongest decreasing trend (-0.016 units/time)
-The quantile regression analysis show the changes in LST distributions across different land cover types in Kano Municipal between 2013-2024. Althoug, these changes are not statistically significant, the consistent patterns across land cover types—particularly the increases in lower quantile temperatures—merit continued monitoring and may have implications for urban planning, agriculture, and ecosystem management in the region.
+The quantile regression analysis show the changes in LST distributions across different land cover types in Kano Municipal between 2013-2024. Although, these changes are not statistically significant, the consistent patterns across land cover types—particularly the increases in lower quantile temperatures—merit continued monitoring and may have implications for urban planning, agriculture, and ecosystem management in the region.
 
 4. ### Seasonal Decomposition Analysis
 The analysis decomposes observed time series data into trend, seasonal, and residual components to understand the temporal patterns in vegetation cover.
