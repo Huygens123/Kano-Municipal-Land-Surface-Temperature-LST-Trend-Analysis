@@ -60,6 +60,7 @@ These results suggest that regional climate factors may be the dominant influenc
 | Shrub          | No trend  | 0.768008  | -0.022785    | -0.006097  |
 | Grassland      | No trend  | 0.552434  | 0.045570     | 0.010915   |
 | Forest         | No trend  | 0.422640  | 0.061392     | 0.013715   |
+
 None of the land cover types show a statistically significant trend in Land Surface Temperature. This is evident from the high p-values (all > 0.05), which suggest that the observed variations in temperature could be due to random fluctuations rather than a consistent trend.
 
   **Seasonal Kendall Test**
@@ -73,10 +74,10 @@ None of the land cover types show a statistically significant trend in Land Surf
 | Forest         | Increasing | 0.004172  | 0.283901    |
 
 Three land cover types (Bareland, Forest, and Crop) show statistically significant increasing Land Surface Temperature trends. Bareland exhibits the most pronounced temperature increase. Built-up and Grassland areas are on the border of statistical significance. Shrub areas show no significant temperature trend. The significant warming in Bareland, Forest, and Crop areas could mean that the local climate change effects, Land use and land cover changes and potential urban heat island or deforestation impacts.
-3. ### Quantile Regeression Analysis (QR)
-# Quantile Regression Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
+3.  Quantile Regeression Analysis (QR)
 Quantile regression was applied to examine potential trends across five different quantiles (0.1, 0.25, 0.5, 0.75, and 0.9) of the LST distribution for each land cover type. This approach helps identify whether different parts of the temperature distribution (e.g., extreme low temperatures vs. extreme high temperatures) are changing at different rates.
 Quantile Regression Analysis of Land Cover Types
+
 | Land Cover Type | Q(0.1) Slope | Q(0.25) Slope | Q(0.5) Slope | Q(0.75) Slope | Q(0.9) Slope | 
 |----------------|--------------|--------------|--------------|---------------|--------------|
 | Bareland       | 0.048749     | 0.043977     | 0.042057     | 0.023058      | -0.022647    |
@@ -86,7 +87,7 @@ Quantile Regression Analysis of Land Cover Types
 | Built up       | 0.015008     | 0.023755     | 0.022609     | 0.007201      | -0.008581    |
 | Grass          | -0.028710    | 0.000478     | 0.012926     | 0.027618      | -0.018106    |
 
-Slope Patterns
+
 Most land cover types show positive slopes in lower to mid quantiles (Q(0.1) to Q(0.5)) and consistent negative slopes appear in the highest quantile (Q(0.9)). Bareland shows the most pronounced slope variations at Q(0.1): 0.048749 while Grassland is the only type with a negative slope at Q(0.1): -0.028710 meanwhile, Crop peaks at Q(0.5) with a slope of 0.030498
 
 The quantile regression analysis show the changes in LST distributions across different land cover types in Kano Municipal between 2013-2024. Although, these changes are not statistically significant, the consistent patterns across land cover types—particularly the increases in lower quantile temperatures—merit continued monitoring and may have implications for urban planning, agriculture, and ecosystem management in the region.
@@ -106,19 +107,16 @@ The analysis decomposes observed time series data into trend, seasonal, and resi
 | Crop       | 47.24     | 8.85           | 39.17        |
 
 **Findings**
-- Trend:
-   - All vegetation types show similar long-term trend patterns with peaks around 2018 and 2024
-   - Forest has the lowest trend component (37.48%)
-   - Run has the highest trend component (49.21%)
-- Seasonal:
-   - All vegetation types display consistent seasonal patterns
-   - Seasonality explains approximately 8-9% of variance across all types
-   - Regular oscillation indicates predictable annual growth cycles
-- Residual Component:
-   - Forest has the highest residual component (46.33%)
-   - Bare has the lowest residual component (36.24%)
-   - A significant drop in residuals visible around 2016 across all types
-The decomposition analysis shows that the seasonal patterns are consistent across vegetation types and the relative importance of trend and random fluctuations varies. Forest areas show higher unexplained variance, suggesting more complex dynamics, while Run areas demonstrate stronger trend dominance.
+-Trend
+   - Highest in Shrub (63.66%) and Bareland (62.34%)
+   - Lowest in Built-up areas (52.62%) and Forest (53.97%)
+- Seasonal Variance
+   - Consistently low across all land cover types
+   - Ranges from 1.57% to 3.63%
+- Residual Variance
+   - Varies from 16.14% to 24.81%
+   - Highest in Built-up areas (24.81%)
+   - Lowest in Grass and Bareland (18.67%)
 
 5. ### Extreme Event Analysis of Land Surface Temperature in Kano Municipal (2013-2024)
 The analysis tracks temperature anomalies and identifies both high and low extreme events based on percentile thresholds.
